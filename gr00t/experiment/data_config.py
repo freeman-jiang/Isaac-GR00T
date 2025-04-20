@@ -147,7 +147,7 @@ class So100DataConfig(BaseDataConfig):
                    "action.right_arm", "action.right_gripper",]
     language_keys = ["annotation.human.task_description"]
     observation_indices = [0]
-    action_indices = list(range(16))
+    action_indices = list(range(12))
 
     def modality_config(self) -> dict[str, ModalityConfig]:
         video_modality = ModalityConfig(

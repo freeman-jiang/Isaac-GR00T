@@ -42,7 +42,7 @@ class Config:
     output_dir: str = "/tmp/gr00t"
     """Directory to save model checkpoints."""
 
-    data_config: str = "gr1_arms_only"
+    data_config: str = "so100"
     """Data configuration name from DATA_CONFIG_MAP."""
 
     # Training parameters
@@ -130,7 +130,8 @@ def main(config: Config):
         dataset_path=config.dataset_path,
         modality_configs=modality_configs,
         transforms=transforms,
-        embodiment_tag=embodiment_tag,  # This will override the dataset's embodiment tag to "new_embodiment"
+        # This will override the dataset's embodiment tag to "new_embodiment"
+        embodiment_tag=embodiment_tag,
         video_backend=config.video_backend,
     )
 
