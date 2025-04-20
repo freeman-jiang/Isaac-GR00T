@@ -106,7 +106,7 @@ class Config:
     embodiment_tag: str = "new_embodiment"
     """Embodiment tag to use for training. e.g. 'new_embodiment', 'gr1'"""
 
-    video_backend: str = "torchvision_av"
+    video_backend: str = "decord"
     """Video backend to use for training. [decord, torchvision_av]"""
 
 
