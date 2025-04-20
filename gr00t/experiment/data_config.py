@@ -99,7 +99,8 @@ class Gr1ArmsOnlyDataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
@@ -115,7 +116,8 @@ class Gr1ArmsOnlyDataConfig(BaseDataConfig):
             StateActionToTensor(apply_to=self.action_keys),
             StateActionTransform(
                 apply_to=self.action_keys,
-                normalization_modes={key: "min_max" for key in self.action_keys},
+                normalization_modes={
+                    key: "min_max" for key in self.action_keys},
             ),
             # concat transforms
             ConcatTransform(
@@ -138,9 +140,11 @@ class Gr1ArmsOnlyDataConfig(BaseDataConfig):
 
 
 class So100DataConfig(BaseDataConfig):
-    video_keys = ["video.webcam"]
-    state_keys = ["state.single_arm", "state.gripper"]
-    action_keys = ["action.single_arm", "action.gripper"]
+    video_keys = ["video.wrist_left", "video.wrist_right", "video.top_cam"]
+    state_keys = ["state.left_arm", "state.left_gripper",
+                  "state.right_arm", "state.right_gripper"]
+    action_keys = ["action.left_arm", "action.left_gripper",
+                   "action.right_arm", "action.right_gripper",]
     language_keys = ["annotation.human.task_description"]
     observation_indices = [0]
     action_indices = list(range(16))
@@ -180,7 +184,8 @@ class So100DataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
@@ -193,13 +198,15 @@ class So100DataConfig(BaseDataConfig):
             StateActionToTensor(apply_to=self.state_keys),
             StateActionTransform(
                 apply_to=self.state_keys,
-                normalization_modes={key: "min_max" for key in self.state_keys},
+                normalization_modes={
+                    key: "min_max" for key in self.state_keys},
             ),
             # action transforms
             StateActionToTensor(apply_to=self.action_keys),
             StateActionTransform(
                 apply_to=self.action_keys,
-                normalization_modes={key: "min_max" for key in self.action_keys},
+                normalization_modes={
+                    key: "min_max" for key in self.action_keys},
             ),
             # concat transforms
             ConcatTransform(
@@ -273,7 +280,8 @@ class Gr1FullUpperBodyDataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
@@ -286,13 +294,15 @@ class Gr1FullUpperBodyDataConfig(BaseDataConfig):
             StateActionToTensor(apply_to=self.state_keys),
             StateActionTransform(
                 apply_to=self.state_keys,
-                normalization_modes={key: "min_max" for key in self.state_keys},
+                normalization_modes={
+                    key: "min_max" for key in self.state_keys},
             ),
             # action transforms
             StateActionToTensor(apply_to=self.action_keys),
             StateActionTransform(
                 apply_to=self.action_keys,
-                normalization_modes={key: "min_max" for key in self.action_keys},
+                normalization_modes={
+                    key: "min_max" for key in self.action_keys},
             ),
             # concat transforms
             ConcatTransform(
@@ -371,7 +381,8 @@ class BimanualPandaGripperDataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
@@ -480,7 +491,8 @@ class BimanualPandaHandDataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
@@ -588,7 +600,8 @@ class SinglePandaGripperDataConfig(BaseDataConfig):
             # video transforms
             VideoToTensor(apply_to=self.video_keys),
             VideoCrop(apply_to=self.video_keys, scale=0.95),
-            VideoResize(apply_to=self.video_keys, height=224, width=224, interpolation="linear"),
+            VideoResize(apply_to=self.video_keys, height=224,
+                        width=224, interpolation="linear"),
             VideoColorJitter(
                 apply_to=self.video_keys,
                 brightness=0.3,
