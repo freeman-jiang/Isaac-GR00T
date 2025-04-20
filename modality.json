@@ -36,13 +36,13 @@
     }
   },
   "video": {
-    "left_wrist": {
+    "wrist_left": {
       "original_key": "observation.images.wrist_left"
     },
-    "right_wrist": {
+    "wrist_right": {
       "original_key": "observation.images.wrist_right"
     },
-    "ego_view": {
+    "top_cam": {
       "original_key": "observation.images.top_cam"
     }
   },
