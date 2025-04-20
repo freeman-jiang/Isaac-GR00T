@@ -39,7 +39,7 @@ class Config:
     dataset_path: str
     """Path to the dataset directory."""
 
-    output_dir: str = "/tmp/gr00t"
+    output_dir: str = "~/gr00t-finetuned"
     """Directory to save model checkpoints."""
 
     data_config: str = "so100"
